@@ -149,7 +149,11 @@
 
         If CheckIfExists(FILE_NAME) = False Then
 
-            'Default values
+            TabControl.SelectedIndex = 1
+            ITabIndex = 1
+
+            System.IO.File.Create(FILE_NAME).Dispose()
+
 
 
         End If
