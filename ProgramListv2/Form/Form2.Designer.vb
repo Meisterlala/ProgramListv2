@@ -133,6 +133,7 @@ Partial Class FormAddEdit
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormAddEdit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add / Edit"
         Me.ResumeLayout(False)
         Me.PerformLayout()
