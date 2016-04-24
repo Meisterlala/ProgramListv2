@@ -138,16 +138,18 @@
         Me.WindowState = FormWindowState.Minimized
         OpenFileDialog.ShowDialog()
         Me.WindowState = FormWindowState.Normal
-        TextBoxPath.Text = OpenFileDialog.FileName
 
-        If TextBoxName.Text = "" Or TextBoxName.Text = TextBoxNameDefault Then
+        Dim fn As String
 
-            Dim fn As String
-            fn = OpenFileDialog.SafeFileName
+        fn = OpenFileDialog.SafeFileName
+
+        If OpenFileDialog.FileName.Length > 0 Then
+            TextBoxPath.Text = OpenFileDialog.FileName
+        End If
+
+        If TextBoxName.Text = "" Or TextBoxName.Text = TextBoxNameDefault And fn.Length > 0 Then
 
             TextBoxName.Text = fn.Substring(0, Convert.ToInt32(fn.LastIndexOf(".")))
-
-
 
         End If
 
