@@ -135,7 +135,9 @@
     ' Choose Button open dialog and to line
     Private Sub ButtonChoose_Click(sender As Object, e As EventArgs) Handles ButtonChoose.Click
 
+        Me.WindowState = FormWindowState.Minimized
         OpenFileDialog.ShowDialog()
+        Me.WindowState = FormWindowState.Normal
         TextBoxPath.Text = OpenFileDialog.FileName
 
         If TextBoxName.Text = "" Or TextBoxName.Text = TextBoxNameDefault Then
