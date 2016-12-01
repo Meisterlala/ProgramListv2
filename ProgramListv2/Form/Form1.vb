@@ -744,6 +744,7 @@
                             If entry.Command <> "" Then
                                 myProcess.StartInfo.Arguments = Convert.ToString(entry.Command)
                             End If
+                            myProcess.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(Convert.ToString(entry.Path))
                             myProcess.StartInfo.UseShellExecute = True
                             myProcess.Start()
 
@@ -777,6 +778,7 @@
                             If entry.Command <> "" Then
                                 myProcess.StartInfo.Arguments = Convert.ToString(entry.Command)
                             End If
+                            myProcess.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(Convert.ToString(entry.Path))
                             myProcess.StartInfo.UseShellExecute = True
                             myProcess.Start()
 
