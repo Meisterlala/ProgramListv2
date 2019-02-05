@@ -34,8 +34,7 @@ Public Class FormMain
         TabControl_SelectedIndexChanged()
         InitializeListView()
 
-        SaveToFile()
-
+        ' SaveToFile() UpdateStartMenu()
     End Sub
 
     'Add gamelist To list View
@@ -478,7 +477,10 @@ Public Class FormMain
             MyShortcut.Arguments = element.Command
             MyShortcut.WorkingDirectory = element.Path.Substring(0, element.Path.LastIndexOf("\"))
 
-            MyShortcut.Save()
+            Try
+                MyShortcut.Save()
+            Catch ex As Exception
+            End Try
 
         Next
 
